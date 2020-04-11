@@ -1,0 +1,9 @@
+{
+  "name": "employee-app-server",
+  "version": "1.0.0",
+  "description": "Backend Server for Employee App",
+  "main": "server.js",
+  "repository": "https://github.com/AsiwajuDev/employee-app-server.git",
+  "author": "asiwajudev <olanrewajuranda@gmail.com>",
+  "license": "MIT"
+}
