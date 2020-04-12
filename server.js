@@ -3,10 +3,13 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-//Import Model
-const employee = require("./Model/Employee");
+//Import Route
+const createEmployee = require("./Route/api/CreateEmployee");
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const mongoUri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-kya97.mongodb.net/test`;
 
@@ -23,6 +26,9 @@ mongoose.connection.on("connected", () => {
 app.get("/", (req, res) => {
   res.send("Welcome to Employee App Server!");
 });
+
+//Use Route
+app.use("/api/employee", createEmployee);
 
 app.listen(3000, () => {
   console.log("Server started");
