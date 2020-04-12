@@ -12,7 +12,7 @@ const mongoUri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cl
 
 //Connect DB
 mongoose
-  .connect(mongoUri, { useNewUrlParser: true })
+  .connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
