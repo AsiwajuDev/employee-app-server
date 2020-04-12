@@ -6,8 +6,7 @@ const Employee = require("../../Model/Employee");
 router.delete("/delete", (req, res) => {
   Employee.findByIdAndRemove(req.body.id)
     .then((data) => {
-      console.log(data);
-      res.send("Employee Fired");
+      res.send(data);
     })
     .catch((err) => {
       console.log(err);

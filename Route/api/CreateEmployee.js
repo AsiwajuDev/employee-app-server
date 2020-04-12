@@ -19,14 +19,23 @@ router.post("/create", (req, res) => {
       newEmployee
         .save()
         .then((data) => {
-          console.log(data);
-          res.send("Employee Added");
+          res.send(data);
         })
         .catch((err) => {
           console.log(err);
         });
     }
   });
+});
+
+router.get("/all", (req, res) => {
+  Employee.find({})
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 module.exports = router;
