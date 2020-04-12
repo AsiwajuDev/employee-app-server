@@ -5,6 +5,8 @@ require("dotenv").config();
 
 //Import Route
 const createEmployee = require("./Route/api/CreateEmployee");
+const deleteEmployee = require("./Route/api/DeleteEmployee");
+// const editEmployee = require("./Route/api/EditEmployee");
 
 const app = express();
 
@@ -29,6 +31,8 @@ app.get("/", (req, res) => {
 
 //Use Route
 app.use("/api/employee", createEmployee);
+app.use("/api/employee", deleteEmployee);
+// app.use("/api/employee", editEmployee);
 
 app.listen(3000, () => {
   console.log("Server started");
