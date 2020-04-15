@@ -34,6 +34,6 @@ app.use("/api/employee", createEmployee);
 app.use("/api/employee", deleteEmployee);
 app.use("/api/employee", editEmployee);
 
-app.listen(3000, () => {
-  console.log("Server started");
-});
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
